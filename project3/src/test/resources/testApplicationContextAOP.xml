@@ -8,7 +8,7 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="org.bk.*.service"/>
-	<bean id="auditAspect" class="org.bk.inventory.aspect.AuditAspect" />
+	<bean id="auditAspect" class="org.bk.trade.aspect.AuditAspect" />
 
 	<aop:aspectj-autoproxy />	
 </beans>
