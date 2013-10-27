@@ -1,4 +1,4 @@
-AOP-Samples
+AOP-Samples - Risk Monitor Proxy example
 ===========
 
 AOP Samples - different ways of writing Aspects
