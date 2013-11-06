@@ -3,6 +3,8 @@ AOP-Samples - Risk Monitor example
 
 AOP Samples - different ways of writing Aspects, Proxies
 
+Project0 - Java Dynamic Proxy Hello World
+
 Project1 - Use case implemented without using Aspects and an alternate approach using Java Dynamic Proxies
 
 Project2 - Use case implemented using Spring AOP, with XML based bean configuration
