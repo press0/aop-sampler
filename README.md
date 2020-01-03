@@ -1,7 +1,7 @@
-AOP-Sampler - Risk Monitor example
+AOP Sampler - Risk Monitor example
 ===========
 
-AOP Sampler - different ways to implement Aspects, Proxies
+7 different ways to implement Aspects, Proxies
 
 Project0 - example implemented with a [Java Dynamic Proxy](https://github.com/press0/aop-sampler/blob/master/project0/src/main/java/com/press/MyInvocationHandler.java)
 
