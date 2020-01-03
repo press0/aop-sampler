@@ -3,7 +3,7 @@ AOP-Samples - Risk Monitor example
 
 AOP Samples - different ways of writing Aspects, Proxies
 
-Project0 - [Dynamic Proxy](https://github.com/press0/aop-sampler/blob/master/project0/src/main/java/com/press/MyInvocationHandler.javaJava)
+Project0 - [Dynamic Proxy](https://github.com/press0/aop-sampler/blob/master/project0/src/main/java/com/press/MyInvocationHandler.java)
 
 Project1 - Use case implemented without using Aspects and an alternate approach using Java Dynamic Proxies
 
