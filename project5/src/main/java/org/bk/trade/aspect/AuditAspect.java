@@ -23,11 +23,11 @@ public class AuditAspect {
 //    public void serviceMethodsWithInventoryAsParam(Inventory trade){
 //        //
 //    }
-    
+
     @Before("serviceMethods()")
     public void beforeMethod(JoinPoint joinpoint) {
     	logger.info("--------------------------------------------------------------------------------------");
-        logger.info("before method {}", joinpoint.getSignature().toShortString());
+        //logger.info("before method {}", joinpoint.getSignature().toShortString());
     }
 
     @Around("serviceMethods()")
@@ -42,7 +42,7 @@ public class AuditAspect {
             throw new RuntimeException(e);
         }
     }
-    
+
 //    @Around("serviceMethodsWithInventoryAsParam(trade)")
 //    public Object aroundMethodWithParameter(ProceedingJoinPoint joinpoint, Inventory trade) {
 //        try {
@@ -53,9 +53,9 @@ public class AuditAspect {
 //            throw new RuntimeException(e);
 //        }
 //    }
-    
+
     @After("serviceMethods()")
     public void afterMethod(JoinPoint joinpoint) {
-        logger.info("after method {}", joinpoint.getSignature().toShortString());
-    }    
+        //logger.info("after method {}", joinpoint.getSignature().toShortString());
+    }
 }

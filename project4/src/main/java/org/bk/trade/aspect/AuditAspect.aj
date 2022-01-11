@@ -1,4 +1,4 @@
-package org.bk.inventory.aspect;
+package org.bk.trade.aspect;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ public aspect AuditAspect {
 
     before() : serviceMethods() {
     	logger.info("--------------------------------------------------------------------------------------");
-        logger.info("before method {}", thisJoinPoint.getSignature().toShortString());
+        logger.info("before method {}", thisJoinPoint.getSignature().toString());
     }
 
     Object around() : serviceMethods() {

@@ -1,9 +1,11 @@
 package org.bk.trade;
 
-import org.junit.Test;
+import static junit.framework.Assert.assertNotNull;
 import static org.junit.Assert.*;
 
 import java.lang.reflect.Proxy;
+
+import org.junit.Test;
 
 public class FooImplTest {
     @Test

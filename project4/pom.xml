@@ -6,13 +6,14 @@
 	<packaging>war</packaging>
 	<version>0.1.0.BUILD-SNAPSHOT</version>
 	<name>project4</name>
-	<properties>
-		<spring.version>3.2.2.RELEASE</spring.version>
-		<slf4j.version>1.6.1</slf4j.version>
-		<aspectj.version>1.7.0</aspectj.version>
-		<java.version>1.7</java.version>		
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+
+	<parent>
+		<groupId>1</groupId>
+		<artifactId>aop-sampler-parent</artifactId>
+		<version>1</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-maven-release</id>
@@ -105,7 +106,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.2.144</version>
+			<version>[2.0.206,)</version>
 		</dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -169,7 +170,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
+				<version>3.8.1</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -191,65 +192,40 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId>
-				<version>1.4</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjrt</artifactId>
-						<version>${aspectj.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>org.aspectj</groupId>
-						<artifactId>aspectjtools</artifactId>
-						<version>${aspectj.version}</version>
-					</dependency>
-				</dependencies>
-				<executions>
-					<execution>
-						<goals>
-							<goal>compile</goal>
-							<goal>test-compile</goal>
-						</goals>
-					</execution>
-				</executions>
+				<version>1.14.0</version>
 				<configuration>
-					<outxml>true</outxml>
-					<aspectLibraries>
-						<aspectLibrary>
-							<groupId>org.springframework</groupId>
-							<artifactId>spring-aspects</artifactId>
-						</aspectLibrary>
-					</aspectLibraries>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>			
-			<!-- IDE -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.7</version>  <!-- Note 2.8 does not work with AspectJ aspect path -->
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>false</downloadJavadocs>
-					<wtpversion>2.0</wtpversion>
-					<additionalBuildcommands>
-						<buildCommand>
-							<name>org.eclipse.ajdt.core.ajbuilder</name>
-							<arguments>
-								<aspectPath>org.springframework.aspects</aspectPath>
-							</arguments>
-						</buildCommand>
-						<buildCommand>
-							<name>org.springframework.ide.eclipse.core.springbuilder</name>
-						</buildCommand>
-					</additionalBuildcommands>
-					<additionalProjectnatures>
-						<projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
-						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-					</additionalProjectnatures>
+					<complianceLevel>16</complianceLevel>
+					<showWeaveInfo>true</showWeaveInfo>
+					<verbose>true</verbose>
+					<Xlint>ignore</Xlint>
 				</configuration>
 			</plugin>
+			<!-- IDE -->
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-eclipse-plugin</artifactId>-->
+<!--				<version>2.7</version>  &lt;!&ndash; Note 2.8 does not work with AspectJ aspect path &ndash;&gt;-->
+<!--				<configuration>-->
+<!--					<downloadSources>true</downloadSources>-->
+<!--					<downloadJavadocs>false</downloadJavadocs>-->
+<!--					<wtpversion>2.0</wtpversion>-->
+<!--					<additionalBuildcommands>-->
+<!--						<buildCommand>-->
+<!--							<name>org.eclipse.ajdt.core.ajbuilder</name>-->
+<!--							<arguments>-->
+<!--								<aspectPath>org.springframework.aspects</aspectPath>-->
+<!--							</arguments>-->
+<!--						</buildCommand>-->
+<!--						<buildCommand>-->
+<!--							<name>org.springframework.ide.eclipse.core.springbuilder</name>-->
+<!--						</buildCommand>-->
+<!--					</additionalBuildcommands>-->
+<!--					<additionalProjectnatures>-->
+<!--						<projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>-->
+<!--						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>-->
+<!--					</additionalProjectnatures>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 		</plugins>
 	</build>
 </project>
