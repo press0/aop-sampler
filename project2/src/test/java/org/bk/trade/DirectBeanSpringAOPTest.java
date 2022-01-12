@@ -17,13 +17,13 @@ public class DirectBeanSpringAOPTest {
 
     @Autowired
     TradeService tradeService;
-        
+
     @Test
     public void testInventoryService() {
         Trade trade = this.tradeService.buy(new Trade("testmake", "testmodel", "testtrim", "testvin"));
         assertThat(trade.getId(), is(1L));
         this.tradeService.findByBloombergId("vin");
-        assertThat(this.tradeService.compositeUpdateService("vin","newmake").getMake(),is("newmake"));
+        assertThat(this.tradeService.compositeUpdateService("vin", "newmake").getMake(), is("newmake"));
     }
 
 }

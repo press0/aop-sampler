@@ -1,7 +1,7 @@
 package org.bk.trade;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 import org.bk.trade.service.InventoryService;
 import org.bk.trade.types.Inventory;
@@ -15,16 +15,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("classpath:/testApplicationContextAOP.xml")
 public class AspectTest {
 
-    @Autowired 
+    @Autowired
     InventoryService inventoryService;
-        
+
     @Test
     public void testInventoryService() {
-        Inventory inventory = this.inventoryService.create(new Inventory("testmake", "testmodel","testtrim","testvin" ));
+        Inventory inventory = this.inventoryService.create(new Inventory("testmake", "testmodel", "testtrim", "testvin"));
         assertThat(inventory.getId(), is(1L));
-        
+
         this.inventoryService.findByVin("vin");
-        assertThat(this.inventoryService.compositeUpdateService("vin","newmake").getMake(),is("newmake"));
+        assertThat(this.inventoryService.compositeUpdateService("vin", "newmake").getMake(), is("newmake"));
     }
 
 }
