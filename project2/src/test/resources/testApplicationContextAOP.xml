@@ -6,12 +6,12 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd   
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="org.bk.*.service" />
-	<bean id="riskMonitorAspect" class="org.bk.trade.aspect.RiskMonitorAdvice" />
+	<context:component-scan base-package="org.cp.*.service" />
+	<bean id="riskMonitorAspect" class="org.cp.trade.aspect.RiskMonitorAdvice" />
 
 	<aop:config>
 		<aop:aspect ref="riskMonitorAspect">
-			<aop:pointcut id="serviceMethods" expression="execution(* org.bk.trade.service..*(..))" />
+			<aop:pointcut id="serviceMethods" expression="execution(* org.cp.trade.service..*(..))" />
 			<aop:before pointcut-ref="serviceMethods" method="beforeMethod"/>
 			<aop:around pointcut-ref="serviceMethods" method="aroundMethod"/>
 			<aop:after  pointcut-ref="serviceMethods" method="afterMethod"/>

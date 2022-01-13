@@ -1,5 +1,17 @@
-AOP-Samples - Risk Monitor example
+AOP-Sampler - Risk Monitor
 ===========
+
+java 18
+```
+mvn clean test
+
+```
+
+
+
+
+
+Reference: [bijukunjummen/AOP-Samples](https://github.com/bijukunjummen/AOP-Samples)
 
 AOP Samples - different ways of writing Aspects, Proxies
 
@@ -15,4 +27,4 @@ Project4 - Use case implemented using Native AspectJ .aj file and compile time w
 
 Project5 - Use case implemented using Native AspectJ @AspectJ support and compile time weaving
 
-Project6 - Comprehensive example - using Native AspectJ @AspectJ support and compile time weaving
+Project6 - Comprehensive example using Native AspectJ @AspectJ support and compile time weaving

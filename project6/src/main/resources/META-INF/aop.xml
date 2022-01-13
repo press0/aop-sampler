@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <aspectj>
 	<aspects>
-		<aspect name="org.bk.trade.aspect.AuditAspect"/>
+		<aspect name="org.cp.trade.aspect.AuditAspect"/>
 	</aspects>
 	<weaver options="-verbose -showWeaveInfo">
 	  
